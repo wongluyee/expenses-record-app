@@ -24,15 +24,15 @@
   font-size: 1rem;
   flex: 1;
   margin: 0 1rem;
-  color: white;
+  color: rgb(215, 215, 215);
 }
 
 .expense-item__price {
   font-size: 1rem;
   font-weight: bold;
-  color: white;
+  color: rgb(215, 215, 215);
   background-color: #40005d;
-  border: 1px solid white;
+  border: 1px solid rgb(215, 215, 215);
   padding: 0.5rem;
   border-radius: 12px;
 }
