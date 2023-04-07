@@ -1,6 +1,6 @@
 .expenses-filter {
-  color: white;
-  padding: 0 1rem;
+  color: rgb(215, 215, 215);
+  /* padding: 0 1rem; */
 }
 
 .expenses-filter__control {
@@ -17,6 +17,7 @@
 }
 
 .expenses-filter select {
+  background-color: rgb(215, 215, 215);
   font: inherit;
   padding: 0.5rem 3rem;
   font-weight: bold;

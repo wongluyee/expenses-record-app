@@ -4,7 +4,7 @@
   align-items: center;
   padding: 0.5rem;
   margin: 1rem 0;
-  background-color: #4b4b4b;
+  background-color: #19376D;
 }
 
 .expense-item__description {
@@ -29,7 +29,7 @@
   font-size: 1rem;
   font-weight: bold;
   color: rgb(215, 215, 215);
-  background-color: #40005d;
+  background-color: #0B2447;
   border: 1px solid rgb(215, 215, 215);
   padding: 0.5rem;
   border-radius: 12px;

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPiggyBank } from '@fortawesome/free-solid-svg-icons'
 
 const DUMMY_EXPENSES = [
   {
@@ -42,6 +44,7 @@ const App = () => {
 
   return (
     <div>
+      <h2 className="header"><FontAwesomeIcon icon={faPiggyBank} /> Expenses Tracker <FontAwesomeIcon icon={faPiggyBank} /></h2>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </div>
