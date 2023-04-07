@@ -6,27 +6,27 @@ import NewExpense from "./components/NewExpense/NewExpense";
 const DUMMY_EXPENSES = [
   {
     id: 1,
-    title: "Resident tax",
-    amount: 50000,
+    title: "Book",
+    amount: 500,
     date: new Date(2023, 2, 30),
   },
   {
     id: 2,
     title: "Bread",
     amount: 100,
-    date: new Date(2022, 3, 1),
+    date: new Date(2023, 4, 1),
   },
   {
     id: 3,
     title: "Lunch",
     amount: 680,
-    date: new Date(2021, 3, 1),
+    date: new Date(2022, 3, 1),
   },
   {
     id: 4,
     title: "Toilet paper",
     amount: 600,
-    date: new Date(2020, 2, 30),
+    date: new Date(2022, 2, 30),
   },
 ];
 
