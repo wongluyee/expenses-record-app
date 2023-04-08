@@ -1,4 +1,4 @@
-### Expenses Tracker
+## Expenses Tracker
 
 An expenses tracker built using React.
 
