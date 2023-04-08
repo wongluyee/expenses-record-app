@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/expenses-record-app/static/css/main.5678673a.css",
+    "main.js": "/expenses-record-app/static/js/main.12a51e37.js",
+    "static/js/787.5ce05dbb.chunk.js": "/expenses-record-app/static/js/787.5ce05dbb.chunk.js",
+    "index.html": "/expenses-record-app/index.html",
+    "main.5678673a.css.map": "/expenses-record-app/static/css/main.5678673a.css.map",
+    "main.12a51e37.js.map": "/expenses-record-app/static/js/main.12a51e37.js.map",
+    "787.5ce05dbb.chunk.js.map": "/expenses-record-app/static/js/787.5ce05dbb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5678673a.css",
+    "static/js/main.12a51e37.js"
+  ]
+}
