@@ -22,6 +22,22 @@
   max-width: 100%;
 }
 
+.new-expense__control input:focus {
+  outline: none;
+  background: #A5D8E8;
+  border-color: #576CBC;
+}
+
+.new-expense__control.invalid input {
+  color: red;
+  background-color: rgb(255, 198, 198);
+}
+
 .new-expense__actions {
   text-align: right;
+}
+
+.error {
+  text-align: left;
+  color: rgb(255, 62, 62);
 }
