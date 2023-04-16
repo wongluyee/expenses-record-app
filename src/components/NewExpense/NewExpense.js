@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./NewExpense.css";
+import classes from "./NewExpense.module.css";
 import ExpenseForm from "./ExpenseForm";
 
 const NewExpense = (props) => {
@@ -36,7 +36,7 @@ const NewExpense = (props) => {
   }
 
   return (
-    <div className="new-expense">
+    <div className={classes["new-expense"]}>
       {addNewExpenseForm}
       {addNewExpenseBtn}
     </div>
