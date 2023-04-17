@@ -16,6 +16,7 @@ const ExpenseForm = (props) => {
     }
     setEnteredTitle(event.target.value);
   };
+
   const amountChangeHandler = (event) => {
     const amount = event.target.value;
     if (amount >= 0) {
@@ -23,6 +24,7 @@ const ExpenseForm = (props) => {
     }
     setEnteredAmount(amount);
   };
+
   const dateChangeHandler = (event) => {
     if (event.target.value !== '') {
       setIsDateValid(true);
@@ -43,7 +45,7 @@ const ExpenseForm = (props) => {
       setIsDateValid(false);
       return;
     }
-    console.log(isTitleValid);
+
     if (isTitleValid && isAmountValid && isDateValid) {
       const expenseData = {
         title: enteredTitle,

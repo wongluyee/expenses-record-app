@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
@@ -42,11 +42,11 @@ const App = () => {
   };
 
   return (
-    <div>
+    <Fragment>
       <h2 className="header"><FontAwesomeIcon icon={faPiggyBank} /> Expenses Tracker <FontAwesomeIcon icon={faPiggyBank} /></h2>
       <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
-    </div>
+    </Fragment>
   );
 }
 

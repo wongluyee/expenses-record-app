@@ -8,6 +8,7 @@ https://wongluyee.github.io/expenses-record-app/
 1. **Props**: pass down data
 2. **useState**: set an initial state and change it depends on user's action
 3. **module.css**: scoped css for specific file
+4. **Fragment**: to avoid unnecessary div
 
 #### Things I need to do next
 1. Add delete feature

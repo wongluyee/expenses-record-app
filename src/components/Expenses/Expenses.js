@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import classes from "./Expenses.module.css";
 import Card from "../UI/Card";
 import ExpenseItem from "./ExpenseItem";
@@ -31,7 +31,7 @@ const Expenses = (props) => {
   }
 
   return (
-    <div>
+    <Fragment>
       <Card className={classes.expenses}>
         <ExpenseFilter
           selectedYear={selectedYear}
@@ -40,7 +40,7 @@ const Expenses = (props) => {
         <ExpensesChart expenses={filteredExpenses}/>
         {expensesContent}
       </Card>
-    </div>
+    </Fragment>
   );
 };
 
