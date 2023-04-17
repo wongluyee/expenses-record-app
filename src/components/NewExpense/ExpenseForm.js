@@ -10,6 +10,7 @@ const ExpenseForm = (props) => {
   const [isDateValid, setIsDateValid] = useState(true);
 
   const titleChangeHandler = (event) => {
+    // So that when the user inputs value, the invalid css go away
     if (event.target.value.trim().length > 0) {
       setIsTitleValid(true);
     }
@@ -23,12 +24,15 @@ const ExpenseForm = (props) => {
     setEnteredAmount(amount);
   };
   const dateChangeHandler = (event) => {
+    if (event.target.value !== '') {
+      setIsDateValid(true);
+    }
     setEnteredDate(event.target.value);
-    console.log(enteredDate);
   };
 
   const submitHandler = (event) => {
     event.preventDefault();
+
     if (enteredTitle.trim().length <= 0) {
       setIsTitleValid(false);
     }
@@ -39,7 +43,7 @@ const ExpenseForm = (props) => {
       setIsDateValid(false);
       return;
     }
-
+    console.log(isTitleValid);
     if (isTitleValid && isAmountValid && isDateValid) {
       const expenseData = {
         title: enteredTitle,
