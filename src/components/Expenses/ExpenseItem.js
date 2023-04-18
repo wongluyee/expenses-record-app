@@ -5,6 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 const ExpenseItem = (props) => {
+  const deleteHandler = () => {
+    console.log('here is delete handler')
+    props.onDelete(props.id);
+  };
+
   return (
     <Card className={classes["expense-item"]}>
       <ExpenseDate date={props.date} />
@@ -13,7 +18,7 @@ const ExpenseItem = (props) => {
         <div className={classes["expense-item__price"]}>
           ¥{props.amount.toLocaleString()}
         </div>
-        <button className={classes['delete-btn']}>
+        <button className={classes['delete-btn']} onClick={deleteHandler}>
         <FontAwesomeIcon icon={faTrash} />
         </button>
       </div>

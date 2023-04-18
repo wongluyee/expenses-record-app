@@ -1,9 +1,9 @@
-import { useState, Fragment } from 'react';
+import { useState, Fragment } from "react";
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPiggyBank } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPiggyBank } from "@fortawesome/free-solid-svg-icons";
 
 const DUMMY_EXPENSES = [
   {
@@ -37,17 +37,30 @@ const App = () => {
 
   const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => {
-      return [expense, ...prevExpenses]
+      return [expense, ...prevExpenses];
+    });
+  };
+
+  const deleteItemHandler = (expenseId) => {
+    setExpenses((prevExpenses) => {
+      const updatedExpenses = prevExpenses.filter(
+        (expense) => expense.id !== expenseId
+      );
+      console.log(expenseId)
+      return updatedExpenses;
     });
   };
 
   return (
     <Fragment>
-      <h2 className="header"><FontAwesomeIcon icon={faPiggyBank} /> Expenses Tracker <FontAwesomeIcon icon={faPiggyBank} /></h2>
+      <h2 className="header">
+        <FontAwesomeIcon icon={faPiggyBank} /> Expenses Tracker{" "}
+        <FontAwesomeIcon icon={faPiggyBank} />
+      </h2>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses expenses={expenses} />
+      <Expenses expenses={expenses} onDeleteItem={deleteItemHandler} />
     </Fragment>
   );
-}
+};
 
 export default App;
