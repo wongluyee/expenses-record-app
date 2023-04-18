@@ -11,5 +11,4 @@ https://wongluyee.github.io/expenses-record-app/
 4. **Fragment**: to avoid unnecessary div
 
 #### Things I need to do next
-1. Add delete feature
-2. Connect it to a database
+1. Connect it to a database
