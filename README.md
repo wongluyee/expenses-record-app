@@ -11,4 +11,6 @@ https://wongluyee.github.io/expenses-record-app/
 4. **Fragment**: to avoid unnecessary div
 
 #### Things I need to do next
-1. Connect it to a database
+##### Connect it to a database
+1. Add new expense (send post request)
+2. Remove an expense (send delete request)

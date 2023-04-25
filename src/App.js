@@ -5,40 +5,51 @@ import NewExpense from "./components/NewExpense/NewExpense";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPiggyBank } from "@fortawesome/free-solid-svg-icons";
 
-const DUMMY_EXPENSES = [
-  {
-    id: 1,
-    title: "Book",
-    amount: 500,
-    date: new Date(2023, 2, 30),
-  },
-  {
-    id: 2,
-    title: "Bread",
-    amount: 100,
-    date: new Date(2023, 4, 1),
-  },
-  {
-    id: 3,
-    title: "Lunch",
-    amount: 680,
-    date: new Date(2022, 3, 1),
-  },
-  {
-    id: 4,
-    title: "Toilet paper",
-    amount: 600,
-    date: new Date(2022, 2, 30),
-  },
-];
+// const DUMMY_EXPENSES = [
+//   {
+//     id: 1,
+//     title: "Book",
+//     amount: 500,
+//     date: new Date(2023, 2, 30),
+//   },
+//   {
+//     id: 2,
+//     title: "Bread",
+//     amount: 100,
+//     date: new Date(2023, 4, 1),
+//   },
+//   {
+//     id: 3,
+//     title: "Lunch",
+//     amount: 680,
+//     date: new Date(2022, 3, 1),
+//   },
+//   {
+//     id: 4,
+//     title: "Toilet paper",
+//     amount: 600,
+//     date: new Date(2022, 2, 30),
+//   },
+// ];
 
 const App = () => {
-  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const [expenses, setExpenses] = useState([]);
 
   const addExpenseHandler = (expense) => {
-    setExpenses((prevExpenses) => {
-      return [expense, ...prevExpenses];
-    });
+    fetch(
+      "https://expenses-record-app-default-rtdb.asia-southeast1.firebasedatabase.app/expenses.json",
+      {
+        method: "POST",
+        body: JSON.stringify(expense),
+        headers: { "Content-Type": "application/json" },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setExpenses((prevExpenses) => {
+          return [expense, ...prevExpenses];
+        });
+      });
   };
 
   const deleteItemHandler = (expenseId) => {
@@ -46,7 +57,7 @@ const App = () => {
       const updatedExpenses = prevExpenses.filter(
         (expense) => expense.id !== expenseId
       );
-      console.log(expenseId)
+      console.log(expenseId);
       return updatedExpenses;
     });
   };
