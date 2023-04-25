@@ -12,5 +12,6 @@ https://wongluyee.github.io/expenses-record-app/
 
 #### Things I need to do next
 ##### Connect it to a database
-1. Add new expense (send post request)
-2. Remove an expense (send delete request)
+1. Show all the expenses (get request)
+2. [Done] Add new expense (post request)
+3. Remove an expense (delete request)
