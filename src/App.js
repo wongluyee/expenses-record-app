@@ -54,6 +54,7 @@ const App = () => {
           });
         }
         setExpenses(loadedExpenses);
+        console.log(loadedExpenses)
       });
   }, []);
 

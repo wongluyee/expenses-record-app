@@ -1,9 +1,9 @@
 import classes from './ExpenseDate.module.css';
 
 const ExpenseDate = (props) => {
-  const month = props.date.slice(5, 7);
-  const day = props.date.slice(8, 10);
-  const year = props.date.slice(0, 4);
+  const month = new Date(props.date).toLocaleString("en-US", { month: "long" });
+  const day = new Date(props.date).toLocaleString("en-US", { day: "2-digit" });
+  const year = new Date(props.date).getFullYear();
 
   return (
     <div className={classes["expense-date"]}>
