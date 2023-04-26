@@ -18,7 +18,8 @@ const ExpensesChart = (props) => {
 
   for (const expense of props.expenses) {
     // Get all the expenses and the month
-    const expenseMonth = expense.date.getMonth();
+    // const expenseMonth = expense.date.slice(5, 7);
+    const expenseMonth = new Date(expense.date).getMonth();
     // Update the value of the appropriate data point by the expense amount
     // Go through all the expenses and sum up all the expenses for different months and assign the values to the appropriate months to the appropriate data points.
     chartDataPoints[expenseMonth].value += expense.amount;

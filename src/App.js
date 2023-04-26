@@ -1,4 +1,4 @@
-import { useState, Fragment } from "react";
+import { useState, Fragment, useEffect } from "react";
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
@@ -34,16 +34,35 @@ import { faPiggyBank } from "@fortawesome/free-solid-svg-icons";
 
 const App = () => {
   const [expenses, setExpenses] = useState([]);
+  const url =
+    "https://expenses-record-app-default-rtdb.asia-southeast1.firebasedatabase.app/expenses.json";
+
+  // This loads all data when the component runs, i.e. GET all data from Firebase when page reload
+  useEffect(() => {
+    // This runs after every render cycle
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        const loadedExpenses = [];
+        // Transform data that we get back from Firebase
+        for (const key in data) {
+          loadedExpenses.push({
+            id: key,
+            title: data[key].title,
+            amount: data[key].amount,
+            date: data[key].date,
+          });
+        }
+        setExpenses(loadedExpenses);
+      });
+  }, []);
 
   const addExpenseHandler = (expense) => {
-    fetch(
-      "https://expenses-record-app-default-rtdb.asia-southeast1.firebasedatabase.app/expenses.json",
-      {
-        method: "POST",
-        body: JSON.stringify(expense),
-        headers: { "Content-Type": "application/json" },
-      }
-    )
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(expense),
+      headers: { "Content-Type": "application/json" },
+    })
       .then((response) => response.json())
       .then((data) => {
         setExpenses((prevExpenses) => {

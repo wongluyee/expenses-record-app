@@ -14,16 +14,18 @@ const Expenses = (props) => {
   };
 
   const filteredExpenses = props.expenses.filter((expense) => {
-    return expense.date.getFullYear().toString() === selectedYear;
+    // expense.date is a string
+    return expense.date.slice(0, 4) === selectedYear;
   });
 
   let expensesContent = <p>No expense records.</p>;
+  console.log(filteredExpenses)
 
   if (filteredExpenses.length > 0) {
     expensesContent = filteredExpenses.map((expense) => (
       <ExpenseItem
-        key={expense.name}
-        id={expense.name}
+        key={expense.id}
+        id={expense.id}
         title={expense.title}
         amount={expense.amount}
         date={expense.date}
