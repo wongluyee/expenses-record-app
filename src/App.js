@@ -39,7 +39,7 @@ const App = () => {
 
   // This loads all data when the component runs, i.e. GET all data from Firebase when page reload
   useEffect(() => {
-    // This runs after every render cycle
+    // This runs after render cycle
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
@@ -72,12 +72,18 @@ const App = () => {
   };
 
   const deleteItemHandler = (expenseId) => {
-    setExpenses((prevExpenses) => {
-      const updatedExpenses = prevExpenses.filter(
-        (expense) => expense.id !== expenseId
-      );
-      console.log(expenseId);
-      return updatedExpenses;
+    fetch(
+      `https://expenses-record-app-default-rtdb.asia-southeast1.firebasedatabase.app/expenses/${expenseId}.json`,
+      {
+        method: "DELETE",
+      }
+    ).then((response) => {
+      setExpenses((prevExpenses) => {
+        const updatedExpenses = prevExpenses.filter(
+          (expense) => expense.id !== expenseId
+        );
+        return updatedExpenses;
+      });
     });
   };
 

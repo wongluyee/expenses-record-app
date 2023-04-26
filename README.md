@@ -15,4 +15,4 @@ https://wongluyee.github.io/expenses-record-app/
 Connect it to a database
 1. [Done] Show all the expenses (get request)
 2. [Done] Add new expense (post request)
-3. Remove an expense (delete request)
+3. [Done] Remove an expense (delete request)

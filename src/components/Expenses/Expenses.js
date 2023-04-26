@@ -19,7 +19,6 @@ const Expenses = (props) => {
   });
 
   let expensesContent = <p>No expense records.</p>;
-  console.log(filteredExpenses)
 
   if (filteredExpenses.length > 0) {
     expensesContent = filteredExpenses.map((expense) => (
