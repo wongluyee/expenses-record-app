@@ -53,8 +53,8 @@ const App = () => {
             date: data[key].date,
           });
         }
-        setExpenses(loadedExpenses);
-        console.log(loadedExpenses)
+        const sortedExpenses = loadedExpenses.sort((a, b) => (a.date < b.date) ? 1: -1);
+        setExpenses(sortedExpenses);
       });
   }, []);
 
